@@ -1,0 +1,22 @@
+package com.easy;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+
+/**
+ * @Description
+ * @Author li long
+ * @Date 2020/8/13 13:52
+ * @Version 1.0
+ **/
+@SpringBootApplication
+@EnableFeignClients  //
+@EnableHystrix  //开启客户端降级
+public class IerpClient {
+
+    public static void main(String[] args) {
+        SpringApplication.run(IerpClient.class,args);
+    }
+}
