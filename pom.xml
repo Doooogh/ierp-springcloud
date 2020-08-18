@@ -12,6 +12,7 @@
         <module>ierp-common</module>
         <module>ierp-client</module>
         <module>ierp-services</module>
+        <module>ierp-auth</module>
     </modules>
     <packaging>pom</packaging>
 
