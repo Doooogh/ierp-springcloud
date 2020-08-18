@@ -31,7 +31,14 @@ public class SchoolServiceImpl implements SchoolService {
     }
 
     @Override
-    public School get(Integer id) {
+    public School get(String id) {
         return schoolDao.get(id);
     }
+
+    @Override
+    public int delete(String id) {
+        return schoolDao.delete(id);
+    }
+
+
 }

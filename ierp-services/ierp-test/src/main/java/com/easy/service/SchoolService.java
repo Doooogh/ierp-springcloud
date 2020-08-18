@@ -12,6 +12,10 @@ import java.util.List;
  **/
 public interface SchoolService {
     List<School> list();
+
     int save (School school);
-    School get(Integer id);
+
+    School get(String id);
+
+    int delete(String id);
 }

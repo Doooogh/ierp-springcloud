@@ -16,14 +16,22 @@
          where id=#{id}
     </select>
 
-    <select id="save">
+    <insert id="save" parameterType="com.easy.entity.edu.School">
         insert into
         ierp_school
         (
-        name
+        `id`,
+        `name`
         )values
         (
+        #{id},
         #{name}
         )
-    </select>
+    </insert>
+
+    <delete id="delete">
+        delete from
+        ierp_school
+        where id=#{id}
+    </delete>
 </mapper>
