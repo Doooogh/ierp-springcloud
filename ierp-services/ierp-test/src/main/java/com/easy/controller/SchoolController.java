@@ -43,6 +43,11 @@ public class SchoolController {
         return CommonResult.success();
     }
 
+    @GetMapping("/testDuan/{id}")
+    public CommonResult testDuan(@PathVariable("id")Long id){
+        return CommonResult.success("school 8001 __________success:"+String.valueOf(id));
+    }
+
 
 
 

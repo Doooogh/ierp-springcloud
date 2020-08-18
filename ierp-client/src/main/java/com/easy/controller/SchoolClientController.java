@@ -4,6 +4,8 @@ import com.easy.commons.CommonResult;
 import com.easy.entity.edu.School;
 import com.easy.service.SchoolService;
 import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -55,8 +57,22 @@ public class SchoolClientController {
 
 
     @GetMapping("/testDuan/{id}")
-    public CommonResult testDuan(@PathVariable("id") Long id){
-        return null;
+    @HystrixCommand(fallbackMethod = "testDuanRongFallback",commandProperties = {
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "1500"),  //请求超时 或者服务错误
+            @HystrixProperty(name = "circuitBreaker.enabled",value = "true"),  //是否开启断路器
+            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value = "10"),   //请求次数
+            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "10000"),  //时间范围
+            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage",value = "60"), //失败率达到多少后跳闸*//*
+    })
+    public CommonResult testDuan(@PathVariable("id") Long id) throws Exception {
+        if(id<0){
+            throw new Exception();
+        }
+        return schoolService.testDuan(id);
+    }
+
+    public CommonResult testDuanRongFallback(@PathVariable("id") Long id){
+        return CommonResult.errorOfMessage("80熔断了。。++++++："+id);
     }
 
 

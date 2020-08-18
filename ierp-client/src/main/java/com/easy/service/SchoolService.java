@@ -32,5 +32,8 @@ public interface SchoolService {
     @DeleteMapping("/school/delete/{id}")
     CommonResult delete(@PathVariable("id") String id);
 
+    @GetMapping("/school/testDuan/{id}")
+    CommonResult testDuan(@PathVariable("id") Long id);
+
 
 }

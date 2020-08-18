@@ -32,4 +32,9 @@ public class FallbackSchoolService implements SchoolService{
         return CommonResult.errorOfMessage("delete school error!!!");
 
     }
+
+    @Override
+    public CommonResult testDuan(Long id) {
+        return null;
+    }
 }
