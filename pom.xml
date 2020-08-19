@@ -13,6 +13,7 @@
         <module>ierp-client</module>
         <module>ierp-services</module>
         <module>ierp-auth</module>
+        <module>ierp-gateway</module>
     </modules>
     <packaging>pom</packaging>
 
