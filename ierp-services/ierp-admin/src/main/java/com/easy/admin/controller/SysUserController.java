@@ -24,7 +24,7 @@ public class SysUserController {
     private SysUserService sysUserService;
 
     @GetMapping("/findByUsername/{username}")
-    public CommonResult findByUsername(@PathVariable("username") String username){
+    public CommonResult<SysUser> findByUsername(@PathVariable("username") String username){
         SysUser sysUser= sysUserService.findByUsername(username);
         return CommonResult.success(sysUser);
     }
