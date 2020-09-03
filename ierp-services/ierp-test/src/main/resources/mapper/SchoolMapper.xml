@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.easy.dao.SchoolDao">
-    <select id="list" resultType="com.easy.entity.edu.School">
+<mapper namespace="com.easy.ierptest.dao.SchoolDao">
+    <select id="list" resultType="com.easy.common.entity.edu.School">
         select *
         from
         ierp_school
     </select>
 
-    <select id="get" resultType="com.easy.entity.edu.School">
+    <select id="get" resultType="com.easy.common.entity.edu.School">
         select
         *
         from
@@ -16,7 +16,7 @@
          where id=#{id}
     </select>
 
-    <insert id="save" parameterType="com.easy.entity.edu.School">
+    <insert id="save" parameterType="com.easy.common.entity.edu.School">
         insert into
         ierp_school
         (

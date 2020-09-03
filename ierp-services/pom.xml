@@ -14,6 +14,7 @@
     <modules>
         <module>ierp-test</module>
         <module>ierp-hystrix-dashboard</module>
+        <module>ierp-admin</module>
     </modules>
 
     <!-- 子模块继承之后，提供作用：锁定版本+子modlue不用写groupId和version  -->

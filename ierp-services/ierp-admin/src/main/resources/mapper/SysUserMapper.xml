@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.easy.admin.dao.SysUserDao">
+    <select id="list" resultType="com.easy.common.entity.system.SysUser">
+        select *
+        from
+        ierp_user
+    </select>
+
+    <select id="get" resultType="com.easy.common.entity.system.SysUser">
+        select
+        *
+        from
+         ierp_user
+         where id=#{id}
+    </select>
+
+    <select id="findByUsername"  resultType="com.easy.common.entity.system.SysUser">
+         select
+        *
+        from
+         ierp_user
+         where username=#{username}
+    </select>
+    <insert id="save" parameterType="com.easy.common.entity.system.SysUser">
+        insert into
+        ierp_user
+        (
+        `id`,
+        `username`,
+        `password`,
+        `status`,
+        `clientId`
+        )values
+        (
+        #{id},
+        #{username},
+        #{password},
+        #{status},
+        #{clientId}
+        )
+    </insert>
+
+    <delete id="delete">
+        delete from
+        ierp_user
+        where id=#{id}
+    </delete>
+</mapper>

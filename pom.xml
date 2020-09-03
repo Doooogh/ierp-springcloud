@@ -28,6 +28,8 @@
         <druid.version>1.1.12</druid.version>
         <mybatis.spring.boot.version>2.1.2</mybatis.spring.boot.version>
         <fastjson.version>1.2.72</fastjson.version>
+        <nimbus-jose-jwt.version>8.16</nimbus-jose-jwt.version>
+        <knife4j.version>2.0.4</knife4j.version>
     </properties>
 
 
@@ -95,6 +97,20 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+
+            <!--JWT(Json Web Token)登录支持-->
+            <dependency>
+                <groupId>com.nimbusds</groupId>
+                <artifactId>nimbus-jose-jwt</artifactId>
+                <version>${nimbus-jose-jwt.version}</version>
+            </dependency>
+
+            <!--Knife4j API文档生产工具-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
             </dependency>
 
 
